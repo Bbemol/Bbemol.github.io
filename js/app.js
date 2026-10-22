@@ -3,9 +3,11 @@
 (() => {
   const W = '#ffffff';
   const D = '#2C353D';
+  // Dossier des images : relatif en statique, fourni par le thème sous WordPress.
+  const ASSETS = window.LEJEUNE_ASSETS || 'assets/';
 
   const CUVEES = [
-    { id: 'brut-reserve', name: 'Brut Réserve', cru: 'Premier Cru', pack: 'assets/brut-reserve.png', situ: 'assets/brut-reserve.png', dark: false,
+    { id: 'brut-reserve', name: 'Brut Réserve', cru: 'Premier Cru', pack: ASSETS + 'brut-reserve.png', situ: ASSETS + 'brut-reserve.png', dark: false,
       short: 'Vif et floral, la signature de la maison.',
       desc: "Notre cuvée emblématique. Un assemblage équilibré de Chardonnay et de Pinot Noir issus de nos parcelles Premier Cru, patiemment élevé en cave pour révéler finesse et fraîcheur.",
       facts: [['Assemblage', 'Chardonnay & Pinot Noir'], ['Dosage', 'Brut'], ['Vieillissement', '3 ans sur lattes'], ['Service', '8 – 10 °C']],
@@ -17,7 +19,7 @@
       facts: [['Assemblage', 'Chardonnay & Pinot Noir'], ['Dosage', 'Demi-sec'], ['Vieillissement', '3 ans sur lattes'], ['Service', '6 – 8 °C']],
       tasting: [['Œil', 'Or soutenu, mousse onctueuse'], ['Nez', 'Fruits mûrs, miel, pâte de coing'], ['Bouche', 'Ample et suave, belle fraîcheur']],
       accords: 'Foie gras, tarte aux fruits, desserts peu sucrés.' },
-    { id: 'brut-rose', name: 'Brut Rosé', cru: 'Premier Cru', pack: 'assets/rose.png', situ: 'assets/rose.png', dark: false,
+    { id: 'brut-rose', name: 'Brut Rosé', cru: 'Premier Cru', pack: ASSETS + 'rose.png', situ: ASSETS + 'rose.png', dark: false,
       short: 'Fruits rouges et robe lumineuse.',
       desc: "Un rosé d'assemblage délicat, où le Pinot Noir de nos coteaux apporte couleur et fruit. Toute l'élégance d'une fin d'après-midi d'été.",
       facts: [['Assemblage', 'Chardonnay & Pinot Noir'], ['Dosage', 'Brut'], ['Vieillissement', '3 ans sur lattes'], ['Service', '8 – 10 °C']],

@@ -20,6 +20,14 @@ python3 -m http.server 8000
 - `assets/` — photos utilisées par le site (`vineyard-aerial.png`, `brut-reserve.png`, `rose.png`).
 - Les PNG `Champagne-Lejeune-P&F---*.png` à la racine sont des détourages de bouteilles, pas encore utilisés.
 
+## WordPress
+
+`wordpress/` contient un WordPress local (Docker, `wordpress/setup.sh`, http://localhost:8080)
+et le thème `wordpress/wp-content/themes/champagne-lejeune/`, découpé depuis `index.html`.
+Le thème garde des copies de `css/`, `js/` et `assets/` : toute modification du site statique
+doit y être reportée (et inversement). Sous WordPress, `window.LEJEUNE_ASSETS` donne à `app.js`
+le dossier des images.
+
 ## Fonctionnement
 
 - Quatre pages : `cuvees`, `histoire` (3 panneaux horizontaux chacune), `news`, `contact`.

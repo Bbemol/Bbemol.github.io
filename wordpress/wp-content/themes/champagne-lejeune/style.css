@@ -1,0 +1,13 @@
+/*
+Theme Name: Champagne Lejeune
+Description: Thème du site Champagne Lejeune Père & Fils, construit à partir de la maquette « Cinema ». Contenu statique pour l'instant.
+Version: 1.0.0
+Requires at least: 6.3
+Requires PHP: 8.0
+Author: Benjamin Perney
+Text Domain: champagne-lejeune
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+/* Les styles du site sont dans css/styles.css, chargé par functions.php. */
