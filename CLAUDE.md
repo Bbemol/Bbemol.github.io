@@ -26,6 +26,9 @@ python3 -m http.server 8000
 - Un seul objet `state` dans `app.js` ; tout changement passe par `setState()` puis `render()`,
   qui met à jour le DOM existant (pas de re-création, pour garder les transitions CSS).
 - Les clics sont gérés par délégation via `data-action` → table `actions`.
+- Sous 900px (`isMobile()` / `@media (max-width: 900px)`) : défilement vertical natif, chaque
+  `.view` défile, menu burger (`state.menu`), en-tête plein au défilement (`.is-solid`),
+  carrousel horizontal pour les cuvées. Molette/flèches/glissés ne pilotent plus les panneaux.
 - Fiche cuvée : classes `is-open` / `is-shown` / `is-swapping` sur `#modal` ; les animations
   sont entièrement en CSS (`.stg` + délai `--d`).
 
@@ -38,7 +41,5 @@ python3 -m http.server 8000
 
 ## À faire
 
-- Ajouter les photos manquantes dans `assets/`.
 - Brancher le formulaire de contact (aucun envoi pour l'instant, il affiche seulement « Merci »).
 - Remplacer le téléphone fictif et les emplacements « Photo à venir ».
-- Pas de version mobile dans le design.

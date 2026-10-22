@@ -2,7 +2,7 @@
 
 Site vitrine de Champagne Lejeune Père & Fils, propriétaires-récoltants à Villers-Marmery depuis 1684.
 
-**Voir le site : https://&lt;utilisateur&gt;.github.io/champagne-lejeune/**
+**Voir le site : https://bbemol.github.io/**
 
 ## Lancer en local
 

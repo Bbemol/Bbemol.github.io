@@ -55,7 +55,7 @@ select option { color: var(--ink); }
   font-family: var(--sans);
   letter-spacing: .3em;
   text-transform: uppercase;
-  font-size: 11.5px;
+  font-size: 13px;
   color: var(--accent);
 }
 
@@ -74,7 +74,7 @@ select option { color: var(--ink); }
   font-family: var(--sans);
   letter-spacing: .16em;
   text-transform: uppercase;
-  font-size: 11.5px;
+  font-size: 13px;
   padding: 16px 30px;
 }
 .btn-dark { background: var(--ink); color: #fff; }
@@ -88,6 +88,11 @@ select option { color: var(--ink); }
   align-items: center;
   gap: 14px;
   letter-spacing: .22em;
+}
+.hero-cta {
+  background: rgba(16, 20, 24, .28);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 .btn-outline-light:hover { background: rgba(255, 255, 255, .12); }
 
@@ -130,21 +135,25 @@ select option { color: var(--ink); }
 .hero-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(16, 20, 24, .52), rgba(16, 20, 24, .22) 42%, rgba(16, 20, 24, .7));
+  /* Halo sombre derrière le texte central, puis voile vertical pour l'en-tête et le bas */
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 50%, rgba(16, 20, 24, .55), rgba(16, 20, 24, 0) 100%),
+    linear-gradient(180deg, rgba(16, 20, 24, .6), rgba(16, 20, 24, .35) 42%, rgba(16, 20, 24, .75));
 }
 .hero-content {
   position: relative;
   color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, .45);
   padding: 0 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.hero-kicker { letter-spacing: .44em; text-transform: uppercase; font-size: 12px; opacity: .9; }
+.hero-kicker { letter-spacing: .44em; text-transform: uppercase; font-size: 13px; opacity: .9; }
 .hero-champagne {
   letter-spacing: .52em;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: clamp(12px, 3vh, 26px);
   padding-left: .52em;
   opacity: .95;
@@ -176,7 +185,7 @@ select option { color: var(--ink); }
   gap: 16px;
   font-family: var(--sans);
   letter-spacing: .3em;
-  font-size: 11.5px;
+  font-size: 13px;
   text-transform: uppercase;
   opacity: .9;
 }
@@ -210,7 +219,7 @@ select option { color: var(--ink); }
 .cuvees-places {
   letter-spacing: .16em;
   text-transform: uppercase;
-  font-size: 10.5px;
+  font-size: 12px;
   color: var(--grey);
 }
 .cuvees-grid {
@@ -261,20 +270,20 @@ select option { color: var(--ink); }
 }
 .placeholder-dark .cuvee-ph { color: rgba(255, 255, 255, .6); }
 .cuvee-ph-title { font-family: var(--serif); font-style: italic; font-size: 18px; }
-.cuvee-ph-note { letter-spacing: .22em; text-transform: uppercase; font-size: 9px; }
+.cuvee-ph-note { letter-spacing: .22em; text-transform: uppercase; font-size: 10.5px; }
 .cuvee-num {
   position: absolute;
   left: 14px;
   bottom: 12px;
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 18px;
   color: #fff;
   text-shadow: 0 1px 8px rgba(0, 0, 0, .35);
 }
 .cuvee-cru {
   letter-spacing: .2em;
   text-transform: uppercase;
-  font-size: 9.5px;
+  font-size: 11px;
   color: var(--accent);
   margin-top: 14px;
 }
@@ -287,7 +296,7 @@ select option { color: var(--ink); }
 }
 .cuvee-short {
   font-weight: 300;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
   color: var(--muted);
   margin-top: 6px;
@@ -314,7 +323,7 @@ select option { color: var(--ink); }
 }
 .famille-text {
   font-weight: 300;
-  font-size: 16.5px;
+  font-size: 17.5px;
   line-height: 1.85;
   color: var(--muted);
   margin: 28px auto 0;
@@ -359,7 +368,7 @@ select option { color: var(--ink); }
 }
 .histoire-body {
   font-weight: 300;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.85;
   color: var(--muted);
   margin: 22px 0 0;
@@ -378,7 +387,7 @@ select option { color: var(--ink); }
   margin-top: 12px;
   letter-spacing: .26em;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11.5px;
   color: #8A908A;
 }
 
@@ -411,13 +420,13 @@ select option { color: var(--ink); }
 .chiffre-u {
   letter-spacing: .28em;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--accent);
   margin-top: 14px;
 }
 .chiffre-t {
   font-weight: 300;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: rgba(255, 255, 255, .7);
   margin: 14px auto 0;
@@ -446,7 +455,7 @@ select option { color: var(--ink); }
 }
 .vignoble-text {
   font-weight: 300;
-  font-size: 16.5px;
+  font-size: 17.5px;
   line-height: 1.85;
   color: rgba(255, 255, 255, .84);
   margin: 24px 0 0;
@@ -470,7 +479,7 @@ select option { color: var(--ink); }
 .commune-c {
   letter-spacing: .2em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--accent);
 }
 .vignoble-cta { margin-top: 36px; }
@@ -511,7 +520,7 @@ select option { color: var(--ink); }
 .news-tag {
   letter-spacing: .16em;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11.5px;
   color: #fff;
   background: var(--accent);
   padding: 5px 10px;
@@ -519,7 +528,7 @@ select option { color: var(--ink); }
 .news-date {
   letter-spacing: .1em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12.5px;
   color: var(--grey);
 }
 .news-card h3 {
@@ -532,7 +541,7 @@ select option { color: var(--ink); }
 }
 .news-card p {
   font-weight: 300;
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.7;
   color: var(--muted);
   margin: 12px 0 0;
@@ -573,7 +582,7 @@ select option { color: var(--ink); }
 }
 .contact-text {
   font-weight: 300;
-  font-size: 15.5px;
+  font-size: 16.5px;
   line-height: 1.8;
   color: rgba(255, 255, 255, .78);
   margin: 22px 0 0;
@@ -582,18 +591,18 @@ select option { color: var(--ink); }
 .contact-label {
   letter-spacing: .2em;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11.5px;
   color: var(--accent);
 }
 .contact-value {
   font-weight: 300;
-  font-size: 14.5px;
+  font-size: 15.5px;
   color: rgba(255, 255, 255, .92);
   margin-top: 8px;
   line-height: 1.6;
 }
 .contact-legal {
-  font-size: 11px;
+  font-size: 12.5px;
   color: rgba(255, 255, 255, .5);
   margin-top: 40px;
   letter-spacing: .03em;
@@ -603,7 +612,7 @@ select option { color: var(--ink); }
 .field-label {
   letter-spacing: .18em;
   text-transform: uppercase;
-  font-size: 10.5px;
+  font-size: 12px;
   color: rgba(255, 255, 255, .6);
   display: block;
   margin-bottom: 8px;
@@ -615,7 +624,7 @@ select option { color: var(--ink); }
   color: #fff;
   cursor: pointer;
   font-family: var(--sans);
-  font-size: 12.5px;
+  font-size: 13.5px;
   letter-spacing: .04em;
   padding: 9px 15px;
   border-radius: 999px;
@@ -628,7 +637,7 @@ select option { color: var(--ink); }
   background: transparent;
   padding: 9px 2px;
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   color: #fff;
   outline: none;
@@ -637,7 +646,7 @@ select option { color: var(--ink); }
 .field:focus { border-bottom-color: var(--accent); }
 textarea.field { resize: none; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-.contact-submit { align-self: flex-start; font-size: 12px; padding: 15px 36px; }
+.contact-submit { align-self: flex-start; font-size: 13px; padding: 15px 36px; }
 .contact-sent h3 {
   font-family: var(--serif);
   font-weight: 400;
@@ -647,7 +656,7 @@ textarea.field { resize: none; }
 }
 .contact-sent p {
   font-weight: 300;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
   color: rgba(255, 255, 255, .78);
   margin: 12px 0 0;
@@ -682,7 +691,7 @@ textarea.field { resize: none; }
   transition: color .6s ease;
   pointer-events: auto;
 }
-.logo-small { font-family: var(--sans); letter-spacing: .36em; font-size: 9.5px; padding-left: .1em; }
+.logo-small { font-family: var(--sans); letter-spacing: .36em; font-size: 11px; padding-left: .1em; }
 .logo-big {
   font-family: var(--serif);
   font-size: 24px;
@@ -707,7 +716,7 @@ textarea.field { resize: none; }
   font-family: var(--sans);
   letter-spacing: .14em;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12.5px;
   white-space: nowrap;
   padding: 4px 0;
 }
@@ -717,7 +726,7 @@ textarea.field { resize: none; }
   align-items: center;
   gap: 7px;
   font-family: var(--sans);
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: .12em;
   margin-left: 6px;
 }
@@ -769,7 +778,7 @@ textarea.field { resize: none; }
 .chapters-label {
   letter-spacing: .2em;
   text-transform: uppercase;
-  font-size: 10.5px;
+  font-size: 12px;
   white-space: nowrap;
 }
 .counter {
@@ -792,7 +801,7 @@ textarea.field { resize: none; }
   cursor: pointer;
   color: inherit;
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 17px;
 }
 .round-btn.is-disabled { opacity: .3; }
 .counter-num {
@@ -804,7 +813,7 @@ textarea.field { resize: none; }
   justify-content: center;
 }
 .counter-cur { font-size: 30px; line-height: 1; }
-.counter-tot { font-size: 16px; opacity: .6; }
+.counter-tot { font-size: 17px; opacity: .6; }
 .progress {
   position: fixed;
   left: 0;
@@ -874,7 +883,7 @@ textarea.field { resize: none; }
 }
 .placeholder-dark .modal-ph { color: rgba(255, 255, 255, .6); }
 .modal-ph-title { font-family: var(--serif); font-style: italic; font-size: 36px; }
-.modal-ph-note { margin-top: 12px; letter-spacing: .26em; text-transform: uppercase; font-size: 10px; }
+.modal-ph-note { margin-top: 12px; letter-spacing: .26em; text-transform: uppercase; font-size: 11.5px; }
 
 .modal-media-shade {
   position: absolute;
@@ -911,7 +920,7 @@ textarea.field { resize: none; }
   background: rgba(16, 20, 24, .25);
   color: #fff;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 17px;
 }
 .modal-dots { display: flex; align-items: center; gap: 8px; }
 .modal-dot { background: none; border: none; padding: 12px 2px; cursor: pointer; }
@@ -974,12 +983,12 @@ textarea.field { resize: none; }
 }
 
 .modal-kicker { display: flex; align-items: center; gap: 14px; }
-.modal-num { font-family: var(--serif); font-size: 17px; color: var(--accent); }
+.modal-num { font-family: var(--serif); font-size: 18px; color: var(--accent); }
 .modal-rule { width: 28px; height: 1px; background: var(--accent); }
 .modal-cru {
   letter-spacing: .24em;
   text-transform: uppercase;
-  font-size: 10.5px;
+  font-size: 12px;
   color: var(--accent);
 }
 .modal-title-mask { overflow: hidden; margin-top: 20px; padding-bottom: 6px; }
@@ -1007,7 +1016,7 @@ textarea.field { resize: none; }
 }
 .modal-desc {
   font-weight: 300;
-  font-size: 15.5px;
+  font-size: 16.5px;
   line-height: 1.85;
   color: var(--muted);
   margin: 18px 0 0;
@@ -1022,14 +1031,14 @@ textarea.field { resize: none; }
 .fact-k {
   letter-spacing: .2em;
   text-transform: uppercase;
-  font-size: 9.5px;
+  font-size: 11px;
   color: var(--grey);
 }
 .fact-v { font-family: var(--serif); font-size: 20px; color: var(--ink); margin-top: 5px; }
 .modal-heading {
   letter-spacing: .24em;
   text-transform: uppercase;
-  font-size: 10.5px;
+  font-size: 12px;
   color: var(--accent);
   margin-top: 34px;
 }
@@ -1042,7 +1051,7 @@ textarea.field { resize: none; }
   align-items: baseline;
 }
 .tasting-k { font-family: var(--serif); font-style: italic; font-size: 19px; color: var(--ink); }
-.tasting-v { font-weight: 300; font-size: 15px; line-height: 1.7; color: var(--muted); }
+.tasting-v { font-weight: 300; font-size: 16px; line-height: 1.7; color: var(--muted); }
 .modal-accords {
   font-family: var(--serif);
   font-style: italic;
@@ -1053,7 +1062,7 @@ textarea.field { resize: none; }
 }
 .modal-actions { display: flex; gap: 12px; margin-top: 36px; flex-wrap: wrap; }
 .modal-actions .btn { padding: 16px 28px; }
-.modal-note { font-size: 12px; color: var(--grey); margin-top: 24px; }
+.modal-note { font-size: 13px; color: var(--grey); margin-top: 24px; }
 
 /* ---------- Message langue ---------- */
 
@@ -1065,11 +1074,177 @@ textarea.field { resize: none; }
   z-index: 400;
   background: var(--ink);
   color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: .04em;
   padding: 14px 24px;
   border-radius: 999px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, .25);
+}
+
+.burger { display: none; }
+
+/* ---------- Tablette et mobile ----------
+   En dessous de 900px, la navigation horizontale laisse place à un défilement
+   vertical classique : chaque page devient une colonne de sections. */
+
+@media (max-width: 900px) {
+  .view {
+    height: 100vh;
+    height: 100svh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .track {
+    display: block;
+    width: 100%;
+    height: auto;
+    transform: none !important;
+    transition: none;
+  }
+  .panel { width: 100%; height: auto; }
+  .panel-bg { inset: 0; width: 100%; height: 100%; transform: none !important; }
+  .chrome { display: none !important; }
+
+  /* En-tête : transparent sur la photo, plein dès qu'on défile */
+  .topbar { padding: 14px 20px; }
+  /* Fond de l'en-tête sur un pseudo-élément : un backdrop-filter posé sur .topbar
+     ferait de lui le repère du menu en position fixe, qui serait alors coincé dans l'en-tête. */
+  .topbar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: rgba(251, 250, 248, .94);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 var(--line);
+    opacity: 0;
+    transition: opacity .4s ease;
+  }
+  .app.is-solid .topbar::before { opacity: 1; }
+  .app.is-solid .logo, .app.is-solid .burger { color: var(--ink); }
+  .logo-big { font-size: 22px; }
+
+  .burger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+    width: 44px;
+    height: 44px;
+    padding: 0 9px;
+    margin-right: -9px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--r-fg);
+    pointer-events: auto;
+    transition: color .6s ease;
+  }
+  .burger span { display: block; height: 1px; background: currentColor; transition: transform .3s ease; }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    padding: 96px 28px 48px;
+    background: var(--night);
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .35s ease, visibility 0s linear .35s;
+  }
+  .nav-item {
+    font-family: var(--serif);
+    font-size: 38px;
+    letter-spacing: .01em;
+    text-transform: none;
+    padding: 4px 0;
+  }
+  .lang { margin: 32px 0 0; font-size: 15px; }
+
+  .app.is-menu-open .nav { opacity: 1; visibility: visible; transition: opacity .35s ease; }
+  .app.is-menu-open .logo, .app.is-menu-open .burger { color: #fff; }
+  .app.is-menu-open .topbar::before { opacity: 0; }
+  .app.is-menu-open .burger span:first-child { transform: translateY(4px) rotate(45deg); }
+  .app.is-menu-open .burger span:last-child { transform: translateY(-4px) rotate(-45deg); }
+
+  /* Accueil */
+  .hero { height: 100vh; height: 100svh; min-height: 560px; }
+  .hero-kicker { font-size: 12px; letter-spacing: .3em; }
+  .hero-title { font-size: clamp(52px, 17vw, 110px); letter-spacing: .08em; text-indent: .08em; }
+  .hero-since { font-size: 12px; letter-spacing: .2em; gap: 10px; }
+  .hero-since .rule { width: 22px; }
+
+  /* Nos Cuvées : carrousel à faire glisser */
+  .cuvees { padding: 104px 0 64px; }
+  .cuvees-head { padding: 0 20px; }
+  .cuvees-title { font-size: 36px; }
+  .cuvees-grid {
+    display: flex;
+    gap: 14px;
+    margin-top: 28px;
+    padding: 0 20px 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 20px;
+    scrollbar-width: none;
+  }
+  .cuvees-grid::-webkit-scrollbar { display: none; }
+  .cuvee-card { flex: 0 0 74%; max-width: 320px; scroll-snap-align: start; }
+  .cuvee-media { height: auto; aspect-ratio: 3 / 4; }
+  .cuvee-name { font-size: 24px; }
+
+  .famille { padding: 80px 24px 96px; }
+
+  /* De Père en Fils */
+  .histoire { grid-template-columns: 1fr; }
+  .histoire-text { padding: 112px 24px 56px; }
+  .histoire-photo { height: 56vh; }
+  .chiffres { padding: 80px 24px; }
+  .chiffres-grid { grid-template-columns: 1fr; gap: 56px; margin-top: 40px; }
+  .vignoble { min-height: 100vh; min-height: 100svh; padding: 96px 0 72px; }
+  .vignoble-content { padding: 0 24px; }
+
+  /* Actualités */
+  .news {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    justify-content: flex-start;
+    padding: 112px 20px 56px;
+  }
+  .news-grid { grid-template-columns: 1fr; gap: 20px; margin-top: 28px; }
+  .news-img { height: 220px; }
+  .news-body { padding: 24px 22px 28px; }
+
+  /* Contact */
+  .contact { height: auto; min-height: 100vh; min-height: 100svh; align-items: stretch; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; padding: 112px 24px 56px; }
+  .field-row { grid-template-columns: 1fr; }
+  .field { font-size: 16px; } /* 16px minimum : évite le zoom automatique sur iOS */
+
+  /* Fiche cuvée : photo en haut, texte en dessous, tout défile */
+  .modal { display: block; overflow-y: auto; overscroll-behavior: contain; }
+  .modal-media { height: 58vh; height: 58svh; }
+  .modal-line { display: none; }
+  .modal-panel { overflow: visible; }
+  .modal-close {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    float: none;
+    margin: 0;
+    z-index: 5;
+  }
+  .modal-content { padding: 36px 24px 64px; }
+  .modal-title { font-size: 46px; }
+  .modal-facts { grid-template-columns: 1fr 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

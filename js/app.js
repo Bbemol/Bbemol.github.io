@@ -55,7 +55,8 @@
   const state = {
     page: 'cuvees', idx: 0,
     detail: null, shown: false, swapping: false,
-    objet: 'Commande', formCuvee: 'brut-reserve', sent: false
+    objet: 'Commande', formCuvee: 'brut-reserve', sent: false,
+    menu: false
   };
 
   const $ = (sel, root = document) => root.querySelector(sel);
@@ -70,6 +71,10 @@
   let wheelLock = false;
   let swapTimer = 0;
   let langTimer = 0;
+
+  // Sous 900px, les panneaux s'empilent et la page défile verticalement (voir styles.css).
+  const mobileQuery = window.matchMedia('(max-width: 900px)');
+  const isMobile = () => mobileQuery.matches;
 
   // Une image absente laisse voir le fond de son conteneur plutôt qu'une icône cassée.
   document.addEventListener('error', (e) => {
@@ -135,6 +140,10 @@
     $('#next').classList.toggle('is-disabled', idx === total - 1);
     $('#progress').style.width = ((idx + 1) / total * 100) + '%';
 
+    app.classList.toggle('is-solid', isMobile() && view.scrollTop > 40);
+    app.classList.toggle('is-menu-open', state.menu);
+    $('.burger').setAttribute('aria-expanded', String(state.menu));
+
     renderModal();
     renderContact();
   }
@@ -172,6 +181,7 @@
     $('#d-next-name').textContent = `${next.name} →`;
     $$('.modal-dot').forEach((b, i) => b.classList.toggle('is-active', i === di));
     $('.modal-panel').scrollTop = 0;
+    modal.scrollTop = 0;
   }
 
   function renderContact() {
@@ -192,12 +202,35 @@
 
   function go(i) {
     const n = Math.max(0, Math.min(PAGES[state.page].labels.length - 1, i));
+    if (isMobile()) scrollToPanel(n, 'smooth');
     if (n !== state.idx) setState({ idx: n });
   }
 
-  function setPage(page, idx = 0) {
+  function setPage(page, idx = 0, extra = {}) {
     clearTimeout(swapTimer);
-    setState({ page, idx, detail: null, shown: false, swapping: false });
+    setState({ page, idx, detail: null, shown: false, swapping: false, menu: false, ...extra });
+    if (isMobile()) scrollToPanel(idx, 'instant');
+  }
+
+  function currentView() {
+    return $(`.view[data-page="${state.page}"]`);
+  }
+
+  function scrollToPanel(idx, behavior) {
+    const view = currentView();
+    const panel = $$('.panel', view)[idx];
+    view.scrollTo({ top: idx && panel ? panel.offsetTop : 0, behavior });
+  }
+
+  // Sur mobile, le panneau courant suit le défilement (soulignement du menu, bouton « Découvrir »).
+  function onViewScroll(e) {
+    if (!isMobile() || e.currentTarget !== currentView()) return;
+    const view = e.currentTarget;
+    const line = view.scrollTop + window.innerHeight * .4;
+    let idx = 0;
+    $$('.panel', view).forEach((panel, i) => { if (panel.offsetTop <= line) idx = i; });
+    if (idx !== state.idx) setState({ idx });
+    else app.classList.toggle('is-solid', view.scrollTop > 40);
   }
 
   function openDetail(id) {
@@ -229,7 +262,7 @@
 
   function order(id) {
     clearTimeout(swapTimer);
-    setState({ page: 'contact', idx: 0, detail: null, shown: false, swapping: false, objet: 'Commande', formCuvee: id, sent: false });
+    setPage('contact', 0, { objet: 'Commande', formCuvee: id, sent: false });
   }
 
   function showLangNote() {
@@ -248,7 +281,8 @@
     histoire: () => setPage('histoire'),
     news: () => setPage('news'),
     contact: () => setPage('contact'),
-    'contact-visite': () => setState({ page: 'contact', idx: 0, objet: 'Visite & dégustation', sent: false }),
+    'contact-visite': () => setPage('contact', 0, { objet: 'Visite & dégustation', sent: false }),
+    menu: () => setState({ menu: !state.menu }),
     open: (el) => openDetail(el.dataset.id),
     dot: (el) => swapTo(el.dataset.id),
     close: closeDetail,
@@ -275,8 +309,12 @@
 
   /* ---------- Molette, clavier, glissé ---------- */
 
+  for (const view of $$('.view')) view.addEventListener('scroll', onViewScroll, { passive: true });
+  mobileQuery.addEventListener('change', () => setState({ menu: false }));
+
+  // Sur mobile, molette, flèches et glissés gardent leur comportement natif (défilement).
   window.addEventListener('wheel', (e) => {
-    if (state.detail) return;
+    if (state.detail || isMobile()) return;
     if (PAGES[state.page].labels.length < 2) return;
     e.preventDefault();
     if (wheelLock) return;
@@ -290,8 +328,12 @@
   window.addEventListener('keydown', (e) => {
     const tag = (e.target && e.target.tagName) || '';
     if (/INPUT|TEXTAREA|SELECT/.test(tag)) return;
-    if (e.key === 'Escape') { if (state.detail) closeDetail(); return; }
-    if (state.detail) return;
+    if (e.key === 'Escape') {
+      if (state.detail) closeDetail();
+      else if (state.menu) setState({ menu: false });
+      return;
+    }
+    if (state.detail || isMobile()) return;
     if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key)) { e.preventDefault(); go(state.idx + 1); }
     if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); go(state.idx - 1); }
   });
@@ -303,7 +345,7 @@
     touchY = e.touches[0].clientY;
   }, { passive: true });
   window.addEventListener('touchend', (e) => {
-    if (state.detail) return;
+    if (state.detail || isMobile()) return;
     const dx = e.changedTouches[0].clientX - touchX;
     const dy = e.changedTouches[0].clientY - touchY;
     if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(state.idx + (dx < 0 ? 1 : -1));
