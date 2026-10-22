@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Champagne Lejeune · Père &amp; Fils</title>
+<meta name="description" content="Champagne Lejeune Père & Fils, propriétaires-récoltants à Villers-Marmery depuis 1684.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/app.js" defer></script>
+</head>
+<body>
+<div class="app" id="app">
+
+  <!-- Nos Cuvées : Accueil · Nos Cuvées · La Famille -->
+  <div class="view" data-page="cuvees">
+    <div class="track">
+
+      <section class="panel hero">
+        <img class="panel-bg" data-par="0" src="assets/vineyard-aerial.png" alt="Le vignoble Lejeune">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <div class="hero-kicker">Propriétaires-Récoltants</div>
+          <div class="hero-champagne">Champagne</div>
+          <h1 class="hero-title">LEJEUNE</h1>
+          <div class="hero-sub">Père &amp; Fils</div>
+          <button class="hero-since" data-action="histoire"><span class="rule"></span>Onze générations depuis 1684<span class="rule"></span></button>
+          <button class="btn btn-outline-light hero-cta" data-action="next">Découvrir nos cuvées <span class="hint-arrow">→</span></button>
+        </div>
+      </section>
+
+      <section class="panel cuvees">
+        <div class="cuvees-head">
+          <div>
+            <div class="eyebrow">Nos Cuvées</div>
+            <h2 class="cuvees-title">Cinq expressions d'un même terroir</h2>
+          </div>
+          <span class="cuvees-places">Villers-Marmery · Verzy · Ambonnay</span>
+        </div>
+        <div class="cuvees-grid" id="cuvees-grid"></div>
+      </section>
+
+      <section class="panel famille">
+        <div class="famille-inner">
+          <div class="eyebrow">De Père en Fils</div>
+          <span class="diamond famille-diamond"></span>
+          <h2 class="famille-title">Derrière chaque bouteille,<br>onze générations</h2>
+          <p class="famille-text">Depuis Sébastien Lejeune, né en 1684, notre famille cultive la vigne à Villers-Marmery, Verzy et Ambonnay.</p>
+          <div class="famille-actions">
+            <button class="btn btn-dark" data-action="histoire">Notre histoire</button>
+            <button class="btn btn-outline" data-action="contact-visite">Nous rendre visite</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- De Père en Fils : Notre histoire · En chiffres · Le Vignoble -->
+  <div class="view" data-page="histoire" hidden>
+    <div class="track">
+
+      <section class="panel histoire">
+        <div class="histoire-text">
+          <div class="eyebrow">De Père en Fils</div>
+          <h1 class="histoire-title">Onze générations<br>au service de la vigne</h1>
+          <p class="histoire-lead">Depuis Sébastien Lejeune, né en 1684, onze générations de vignerons se sont transmis les traditions et le savoir-faire de la maison.</p>
+          <p class="histoire-body">Fruit de cet héritage familial, nos champagnes sont le reflet de notre passion pour la vigne et le vin.</p>
+        </div>
+        <div class="histoire-photo placeholder">
+          <div>
+            <div class="placeholder-title">Portrait de famille</div>
+            <div class="placeholder-note">Photo à venir</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel chiffres">
+        <div class="eyebrow">L'héritage en chiffres</div>
+        <div class="chiffres-grid">
+          <div class="chiffre">
+            <span class="diamond"></span>
+            <div class="chiffre-n">17ᵉ</div>
+            <div class="chiffre-u">siècle</div>
+            <div class="chiffre-t">Une famille de vignerons depuis 1684</div>
+          </div>
+          <div class="chiffre">
+            <span class="diamond"></span>
+            <div class="chiffre-n">2</div>
+            <div class="chiffre-u">cépages</div>
+            <div class="chiffre-t">Chardonnay &amp; Pinot Noir</div>
+          </div>
+          <div class="chiffre">
+            <span class="diamond"></span>
+            <div class="chiffre-n">35</div>
+            <div class="chiffre-u">parcelles</div>
+            <div class="chiffre-t">De 4 à 36 ares, en Premier &amp; Grand Cru</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel vignoble">
+        <img class="panel-bg" data-par="2" src="assets/vineyard-aerial.png" alt="Le domaine et ses parcelles">
+        <div class="vignoble-shade"></div>
+        <div class="vignoble-content">
+          <div class="eyebrow">Le Vignoble</div>
+          <h2 class="vignoble-title">Trois terroirs,<br>trois caractères</h2>
+          <p class="vignoble-text">Notre vignoble s'étend sur trois communes classées Premier Cru et Grand Cru : la finesse crayeuse de Villers-Marmery, la puissance de Verzy, la générosité d'Ambonnay.</p>
+          <div class="communes">
+            <div class="commune"><span class="commune-n">Villers-Marmery</span><span class="commune-c">Premier Cru</span></div>
+            <div class="commune"><span class="commune-n">Verzy</span><span class="commune-c">Grand Cru</span></div>
+            <div class="commune"><span class="commune-n">Ambonnay</span><span class="commune-c">Grand Cru</span></div>
+          </div>
+          <button class="btn btn-accent vignoble-cta" data-action="cuvees">Découvrir nos cuvées</button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Actualités -->
+  <div class="view" data-page="news" hidden>
+    <section class="news">
+      <div class="eyebrow">Actualités</div>
+      <h1 class="news-title">La vie du domaine</h1>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-img placeholder"><img src="assets/vineyard-aerial.png" alt="Vendanges 2026 : nous recrutons"></div>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-tag">Recrutement</span><span class="news-date">Août 2026</span></div>
+            <h3>Vendanges 2026 : nous recrutons</h3>
+            <p>Coupeurs, porteurs, cuisiniers : nous constituons nos équipes pour la récolte de septembre.</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-img placeholder"><img src="assets/brut-reserve.png" alt="Médaille d'Or à Paris"></div>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-tag">Distinction</span><span class="news-date">Mars 2026</span></div>
+            <h3>Médaille d'Or à Paris</h3>
+            <p>Notre Brut Grande Réserve a été distingué au Concours Général Agricole de Paris.</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-img placeholder"><img src="assets/rose.png" alt="Les vendanges ont commencé"></div>
+          <div class="news-body">
+            <div class="news-meta"><span class="news-tag">Au domaine</span><span class="news-date">Sept. 2025</span></div>
+            <h3>Les vendanges ont commencé</h3>
+            <p>Le raisin est à maturité : la récolte démarre sur nos trois communes.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact & Visites -->
+  <div class="view" data-page="contact" hidden>
+    <section class="contact">
+      <img class="contact-bg" src="assets/brut-reserve.png" alt="Champagne Lejeune">
+      <div class="contact-shade"></div>
+      <div class="contact-inner">
+        <div class="contact-info">
+          <div class="eyebrow">Contact &amp; Visites</div>
+          <h1 class="contact-title">À bientôt<br>en Champagne</h1>
+          <p class="contact-text">Vente au domaine, visites et dégustations sur rendez-vous, au cœur de nos vignes de Villers-Marmery.</p>
+          <div class="contact-cols">
+            <div>
+              <div class="contact-label">Adresse</div>
+              <div class="contact-value">51380 Villers-Marmery<br>France</div>
+            </div>
+            <div>
+              <div class="contact-label">Nous joindre</div>
+              <div class="contact-value">+33 (0)3 26 00 00 00<br>contact@champagne-lejeune.fr</div>
+            </div>
+          </div>
+          <div class="contact-legal">L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</div>
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div>
+              <div class="field-label">Objet</div>
+              <div class="chips" id="objets">
+                <button type="button" class="chip" data-action="objet" data-objet="Commande">Commande</button>
+                <button type="button" class="chip" data-action="objet" data-objet="Visite &amp; dégustation">Visite &amp; dégustation</button>
+                <button type="button" class="chip" data-action="objet" data-objet="Vendanges">Vendanges</button>
+                <button type="button" class="chip" data-action="objet" data-objet="Autre">Autre</button>
+              </div>
+            </div>
+            <div id="field-cuvee">
+              <label class="field-label" for="f-cuvee">Cuvée souhaitée</label>
+              <select class="field" id="f-cuvee" name="cuvee"></select>
+            </div>
+            <div class="field-row">
+              <div>
+                <label class="field-label" for="f-nom">Nom</label>
+                <input class="field" id="f-nom" name="nom" placeholder="Votre nom" autocomplete="name">
+              </div>
+              <div>
+                <label class="field-label" for="f-email">Courriel</label>
+                <input class="field" id="f-email" name="email" type="email" placeholder="vous@exemple.fr" autocomplete="email">
+              </div>
+            </div>
+            <div>
+              <label class="field-label" for="f-msg">Message</label>
+              <textarea class="field" id="f-msg" name="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent contact-submit">Envoyer</button>
+          </form>
+          <div class="contact-sent" id="contact-sent" hidden>
+            <span class="diamond diamond-lg"></span>
+            <h3>Merci.</h3>
+            <p>Votre message a bien été transmis. Nous vous répondrons dans les meilleurs délais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- En-tête -->
+  <header class="topbar">
+    <button class="logo" data-action="home" aria-label="Accueil">
+      <span class="logo-small">CHAMPAGNE</span>
+      <span class="logo-big">LEJEUNE</span>
+    </button>
+    <nav class="nav">
+      <button class="nav-item" data-action="cuvees" data-nav="cuvees">Nos Cuvées</button>
+      <button class="nav-item" data-action="histoire" data-nav="histoire">De Père en Fils</button>
+      <button class="nav-item" data-action="news" data-nav="news">Actualités</button>
+      <button class="nav-item" data-action="contact" data-nav="contact">Contact</button>
+      <div class="lang">
+        <button class="lang-btn is-active" data-action="fr">FR</button>
+        <span class="lang-sep">/</span>
+        <button class="lang-btn" data-action="en">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Navigation horizontale -->
+  <div class="chrome" id="chrome">
+    <div class="chapters">
+      <div class="chapters-bars" id="chapters"></div>
+      <span class="chapters-label" id="chapter-label"></span>
+    </div>
+    <div class="counter">
+      <button class="round-btn" id="prev" data-action="prev" aria-label="Précédent">←</button>
+      <div class="counter-num"><span class="counter-cur" id="counter-cur">01</span><span class="counter-tot" id="counter-tot">/ 03</span></div>
+      <button class="round-btn" id="next" data-action="next" aria-label="Suivant">→</button>
+    </div>
+    <div class="progress"><div class="progress-bar" id="progress"></div></div>
+  </div>
+
+  <!-- Fiche cuvée -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="d-name" aria-hidden="true" inert>
+    <div class="modal-media">
+      <div class="modal-img" id="d-media"></div>
+      <div class="modal-media-shade"></div>
+      <div class="modal-logo stg" style="--d:.9s">
+        <span class="logo-small">CHAMPAGNE</span>
+        <span class="logo-big">LEJEUNE</span>
+      </div>
+      <div class="modal-controls stg" style="--d:1s">
+        <div class="modal-arrows">
+          <button class="modal-arrow" data-action="detail-prev" aria-label="Cuvée précédente">←</button>
+          <button class="modal-arrow" data-action="detail-next" aria-label="Cuvée suivante">→</button>
+        </div>
+        <div class="modal-dots" id="d-dots"></div>
+      </div>
+    </div>
+    <div class="modal-line"></div>
+    <div class="modal-panel">
+      <button class="modal-close stg" style="--d:.9s" data-action="close" aria-label="Fermer">×</button>
+      <div class="modal-content">
+        <div class="modal-kicker stg" style="--d:.42s">
+          <span class="modal-num" id="d-num"></span>
+          <span class="modal-rule"></span>
+          <span class="modal-cru" id="d-cru"></span>
+        </div>
+        <div class="modal-title-mask">
+          <h2 class="modal-title" id="d-name"></h2>
+        </div>
+        <div class="stg" style="--d:.62s">
+          <p class="modal-short" id="d-short"></p>
+          <p class="modal-desc" id="d-desc"></p>
+        </div>
+        <div class="modal-facts stg" style="--d:.72s" id="d-facts"></div>
+        <div class="stg" style="--d:.82s">
+          <div class="modal-heading">Dégustation</div>
+          <div class="modal-tasting" id="d-tasting"></div>
+          <div class="modal-heading modal-heading-accords">Accords</div>
+          <p class="modal-accords" id="d-accords"></p>
+        </div>
+        <div class="stg" style="--d:.92s">
+          <div class="modal-actions">
+            <button class="btn btn-dark" data-action="detail-order">Commander cette cuvée</button>
+            <button class="btn btn-outline" data-action="detail-next" id="d-next-name"></button>
+          </div>
+          <div class="modal-note">Vente au domaine sur rendez-vous · Expédition sur demande</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="lang-toast" role="status" hidden>English version coming soon.</div>
+
+</div>
+</body>
+</html>
